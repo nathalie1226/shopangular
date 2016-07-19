@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html data-ng-app="myApp">
+<html data-ng-app='myApp'>
 <head>
     <meta charset="UTF-8">
     <title>Shop</title>
     <link type="text/css" rel="stylesheet" href="shop.css">
-    <script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+    <script src="https://code.angularjs.org/1.2.9/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-route.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <script src="app.js"></script>
-    <script src="routes/config.js"></script>
+    <!--<script src="app.js"></script>-->
+
     <script src="controller/controller.js"></script>
 </head>
 <body class="font" data-ng-controller="StoreController as store">
@@ -49,14 +50,22 @@ Search <input type="text">
     <h1 class="name">{{product.name | uppercase}}</h1>
     <img data-ng-src="{{product.image.src}}">
     <h2 class="price"> Price : {{product.price}}</h2>
-    <!--<p>{{product.stock}}</p>-->
-   <!-- <input ng-model="product.showDescription" ng-change="showDescription()"type="checkbox"> Description-->
+    <!--<div><button id="mybutton" ng-click="showDescription(section)" >Click me</button></div>-->
+    <!--<div ng-show="showMe">-->
+        <!--<h1>Menu:</h1>-->
+        <!--<div>Pizza</div>-->
+        <!--<div>Pasta</div>-->
+        <!--<div>Pesce</div>-->
+    <!--</div>-->
+    <!--<div>Value: {{myvalue}}</div>-->
+    <!--<div><div ng-show="myvalue" class="hideByDefault">Here I am</div></div>-->
+<!--</div>-->
     <a href="#/description"><button ng-model="product.showDescription" ng-click="showDescription()" class="btn btn-success">Show Description</button></a>
     <br>
     <br>
     <button data-ng-show="product.canPurchase" class="btn btn-success">Add to cart</button>
 </div>
-<div data-ng-view="">
+<div data-ng-view>
 
 </div>
 </div>
