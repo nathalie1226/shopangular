@@ -1,0 +1,36 @@
+img{
+    height:100px;
+    width:100px;
+    text-align:center;
+}
+body {
+    min-height: 2000px;
+    padding-top: 70px;
+
+}
+
+.font{
+    font-family: 'Pacifico', cursive;
+
+}
+
+.right{
+    float:right;
+}
+.item{
+    /*border: 1px solid black;*/
+    height:350px;
+    width:350px;
+    display:inline-block;
+    margin-left:2%;
+    margin-top:2%;
+
+}
+
+.name{
+    font-size: 25px;
+}
+
+.price{
+    font-size:15px;
+}
