@@ -27,7 +27,14 @@ body {
 
 }
 
-
+.item.description{
+    /*border: 1px solid black;*/
+    height:350px;
+    width:350px;
+    display:inline-block;
+    margin-left:36%;
+    margin-top:2%;
+}
 
 .name{
     font-size: 25px;

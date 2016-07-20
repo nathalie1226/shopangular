@@ -1,0 +1,28 @@
+<div class="container">
+<span>
+Search <input type="text">
+    <span class="right">0 items, 0$</span>
+
+</span>
+    <br>
+    <br>
+    <div  class="item"  data-ng-repeat="product in products">
+        <h1 class="name">{{product.name | uppercase}}</h1>
+        <img data-ng-src="{{product.image.src}}">
+        <h2 class="price"> Price : {{product.price}}</h2>
+        <!--<div><button id="mybutton" ng-click="showDescription(section)" >Click me</button></div>-->
+        <!--<div ng-show="showMe">-->
+        <!--<h1>Menu:</h1>-->
+        <!--<div>Pizza</div>-->
+        <!--<div>Pasta</div>-->
+        <!--<div>Pesce</div>-->
+        <!--</div>-->
+        <!--<div>Value: {{myvalue}}</div>-->
+        <!--<div><div ng-show="myvalue" class="hideByDefault">Here I am</div></div>-->
+        <!--</div>-->
+        <a href="#/partials/description">Show Description</a>
+        <br>
+        <br>
+        <button data-ng-show="product.canPurchase" class="btn btn-success">Add to cart</button>
+    </div>
+</div>
