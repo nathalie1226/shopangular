@@ -1,13 +1,14 @@
 <div class="container description">
 
-    <div  class="item description"  data-ng-repeat="p in selectedProduct">
-        <h1 class="name">Product Name:{{p.name | uppercase}}</h1>
-        <img data-ng-src="{{p.image.src}}">
-        <h2 class="price"> Price : {{p.price}}</h2>
-        <p>Color:{{p.color}}</p>
-        <p>{{p.releaseDate}}</p>
-        <p>{{p.description}}</p>
-        <p> Stock : {{p.stock}}</p>
-        <button data-ng-show="p.canPurchase" class="btn btn-success">Add to cart</button>
+    <div  class="item description"  >
+        <h1 class="name">Product Name:{{selectedProduct.name | uppercase}}</h1>
+        <img data-ng-src="{{selectedProduct.image}}">
+        <h2 class="price"> Price : {{selectedProduct.price}}</h2>
+        <p>Color:{{selectedProduct.color}}</p>
+        <p>{{selectedProduct.releaseDate}}</p>
+        <p>Description: {{selectedProduct.description}}</p>
+        <p> Stock : {{selectedProduct.stock}}</p>
+        <button  class="btn btn-success">Add to cart</button>
     </div>
 </div>
+
