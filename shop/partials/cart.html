@@ -5,13 +5,20 @@
 
 <div class="container">
             <div >
-                <h1>Your Shopping Cart has {{itemsBought}} items</h1><hr />
-                <div data-ng-repeat="item in productsBought">
-                    <span>{{item.name}}</span>
-                    Quantity: <input type="number" ng-model="item.quantity"/><br />
-                    Price :
-                    <span>{{item.price | currency}}</span><br />
-                    Total : <span>{{item.price * item.quantity | currency}}</span><br />
+                <div data-ng-repeat="item in productsBought track by $index">
+
+                    <h1 class="name">{{item.name | uppercase}}</h1>
+                    <img data-ng-src=".{{item.image}}">
+                    <h2 class="price"> Price : {{item.price |currency }}</h2>
+
+                    <!--<span>{{item.name}}</span>-->
+                    <!--<br>-->
+                    Quantity: <span>{{item.quantity}}</span>
+                    <br>
+                    <!--Price :-->
+                    <!--<span>{{item.price | currency}}</span><br />-->
+                    <!--<br>-->
+                    Total : <span>{{item.price * item.quantity | currency }}</span><br />
                     <button ng-click="remove($index)">Remove</button>
                     <hr />
                 </div>
@@ -19,16 +26,13 @@
 
 
 
-
-            <div class="panel panel-primary">
+            <!--<div class="panel panel-primary">-->
             <div id="divTotal" class="panel-heading">
-                <h3 class="panel-title">Total</h3>
+                <h3 class="panel-title">Total  : {{total}}</h3>
             </div>
-            <div class="panel-body">
-                <h2>Result:{{item.price * item.quantity | currency}} </h2>
-            </div>
-        </div>
 
+        <!--</div>-->
+    <button type="button" class="btn btn-danger" data-ng-click="removeAllProducts()">Checkout</button>
 
 
 

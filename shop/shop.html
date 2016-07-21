@@ -3,71 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Shop</title>
-    <link type="text/css" rel="stylesheet" href="shop.css">
+    <link type="text/css" rel="stylesheet" href="content/css/shop.css">
     <script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.5.7/angular-route.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <script src="test.js"></script>
-
-    <script src="controller3.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <script src="app.js"></script>
+    <script src="controller/StoreController.js"></script>
 </head>
 <body class="font" >
-<nav   class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Demo Shop</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#/home">Home</a></li>
-                <!--<li><a href="#about">About</a></li>-->
-                <!--<li><a href="#contact">Contact</a></li>-->
-            </ul>
-            <ul class="nav navbar-nav navbar-right right">
-                <li><a href="../navbar-static-top/"><span class="glyphicon glyphicon-cog"></span> Dashboard</a></li>
-                <li class="active"><a href="#/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="sr-only">(current)</span></a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-<!--<div class="container">-->
-<!--<span>-->
-<!--Search <input type="text">-->
-    <!--<span class="right">0 items, 0$</span>-->
 
-<!--</span>-->
-    <!--<br>-->
-    <!--<br>-->
-<!--<div  class="item"  data-ng-repeat="product in products">-->
-    <!--<h1 class="name">{{product.name | uppercase}}</h1>-->
-    <!--<img data-ng-src="{{product.image.src}}">-->
-    <!--<h2 class="price"> Price : {{product.price}}</h2>-->
-    <!--&lt;!&ndash;<div><button id="mybutton" ng-click="showDescription(section)" >Click me</button></div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div ng-show="showMe">&ndash;&gt;-->
-        <!--&lt;!&ndash;<h1>Menu:</h1>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div>Pizza</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div>Pasta</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div>Pesce</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div>Value: {{myvalue}}</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div><div ng-show="myvalue" class="hideByDefault">Here I am</div></div>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--<a href="#/partials/description">Show Description</a>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<button data-ng-show="product.canPurchase" class="btn btn-success">Add to cart</button>-->
-<!--</div>-->
-<div data-ng-view>
+<div ng-include src="'partials/navbar.html'"></div>
+<div data-ng-view></div>
 
-</div>
-<!--</div>-->
+
 </body>
 </html>
