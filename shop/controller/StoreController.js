@@ -19,6 +19,7 @@
         $scope.productsBought = [];
         if (localStorage.getItem("productsBought")) {
             $scope.productsBought = JSON.parse(localStorage.getItem("productsBought"));
+            $scope.total = parseInt(localStorage.getItem("total"));
 
         }
 
@@ -48,11 +49,12 @@
         };
         $scope.addProduct = function (product) {
             $scope.itemInCart = false;
-            $scope.total = 0;
+
             if (typeof $scope.productsBought == "undefined") {
                 $scope.productsBought = [];
-            }
 
+            }
+            $scope.total=0;
             for (var i = 0; i < $scope.productsBought.length; i++) {
 
                 if ($scope.productsBought[i].name === product.name) {
@@ -71,19 +73,19 @@
 
             }
             for (var j = 0; j < $scope.productsBought.length; j++) {
-                $scope.total = $scope.productsBought[j].quantity * $scope.productsBought[j].price;
+                $scope.total += $scope.productsBought[j].quantity * $scope.productsBought[j].price;
+
             }
             localStorage.removeItem("productsBought");
             localStorage.setItem("productsBought", JSON.stringify($scope.productsBought));
+            localStorage.removeItem("total");
+            localStorage.setItem("total", JSON.stringify($scope.total));
+
 
         };
-        // $scope.total = function () {
-        //     var total = 0;
-        //     angular.forEach($scope.productsBought, function (item) {
-        //         total += item.qty * item.cost;
-        //         console.log(total);
-        //     })
-        // };
+
+
+        
     }
 
 })();
