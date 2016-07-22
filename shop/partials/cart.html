@@ -8,7 +8,7 @@
                 <div data-ng-repeat="item in productsBought track by $index">
 
                     <h1 class="name">{{item.name | uppercase}}</h1>
-                    <img data-ng-src=".{{item.image}}">
+                    <img data-ng-src={{item.image}}>
                     <h2 class="price"> Price : {{item.price |currency }}</h2>
 
                     <!--<span>{{item.name}}</span>-->
@@ -19,7 +19,7 @@
                     <!--<span>{{item.price | currency}}</span><br />-->
                     <!--<br>-->
                     Total : <span>{{item.price * item.quantity | currency }}</span><br />
-                    <button ng-click="remove($index)">Remove</button>
+                    <button ng-click="removeItem($index)">Remove</button>
                     <hr />
                 </div>
             </div>
