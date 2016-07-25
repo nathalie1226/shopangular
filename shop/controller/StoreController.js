@@ -44,16 +44,17 @@
 
 
 
-        $scope.itemsBought = 0;
+
 
         $scope.removeAllProducts = function () {
             localStorage.removeItem("productsBought");
             localStorage.removeItem('total');
-            // localStorage.removeItem('itemsBought');
+            localStorage.removeItem('itemsBought');
 
         };
         $scope.addProduct = function (product) {
-            $scope.itemInCart = false;document.getElementById("level");
+            $scope.itemInCart = false;
+            document.getElementById("level");
 
             if (typeof $scope.productsBought == "undefined") {
                 $scope.productsBought = [];
@@ -61,6 +62,7 @@
             }
 
             $scope.total = 0;
+            $scope.itemsBought = 0;
             for (var i = 0; i < $scope.productsBought.length; i++) {
 
                 if ($scope.productsBought[i].name === product.name) {
