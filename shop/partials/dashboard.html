@@ -1,12 +1,12 @@
 <div class="container">
 <span>
-Search <input type="text">
+Search <input type="text" data-ng-model="filterByName">
     <span class="right">{{itemsBought}} items, {{total}}$</span>
 
 </span>
     <br>
     <br>
-    <div  class="item"  data-ng-repeat="product in products">
+    <div  class="item"  data-ng-repeat="product in products | filter: {name:filterByName} ">
         <h1 class="name">{{product.name | uppercase}}</h1>
         <img data-ng-src="{{product.image}}">
         <h2 class="price"> Price : {{product.price}}</h2>
@@ -19,6 +19,6 @@ Search <input type="text">
             <input class="btn btn-info" type = "submit" value = "Add to cart" data-ng-click = "addProduct(product)">
         </form>
 
-        <!--<button data-ng-show="product.canPurchase" class="btn btn-success" data-ng-click="addProduct()">Add to cart</button>-->
+
     </div>
 </div>

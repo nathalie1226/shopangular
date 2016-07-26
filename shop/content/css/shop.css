@@ -28,7 +28,6 @@ body {
     float:right;
 }
 .item{
-    /*border: 1px solid black;*/
     height:350px;
     width:350px;
     display:inline-block;
@@ -38,7 +37,6 @@ body {
 }
 
 .item.description{
-    /*border: 1px solid black;*/
     height:350px;
     width:350px;
     display:inline-block;
