@@ -4,9 +4,8 @@
         <h1 class="name">Product Name:{{selectedProduct.name | uppercase}}</h1>
         <img data-ng-src="{{selectedProduct.image}}">
         <h2 class="price"> Price : {{selectedProduct.price}}</h2>
-        <p>Color:{{selectedProduct.color}}</p>
-        <p>{{selectedProduct.releaseDate}}</p>
-        <p>{{selectedProduct.description}}</p>
+        <p>Color: {{selectedProduct.color}}</p>
+        <p>Description: {{selectedProduct.description}}</p>
         <p> Stock : {{selectedProduct.stock}}</p>
         <button  class="btn btn-success" data-ng-click = "addProduct(selectedProduct)">Add to cart</button>
     </div>

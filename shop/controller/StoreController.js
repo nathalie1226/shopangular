@@ -30,8 +30,8 @@
 
         $http({
             method: 'GET',
-            // url: 'https://api.myjson.com/bins/3x9d9'
-            url:'https://api.myjson.com/bins/3itdt'
+            // url:'https://api.myjson.com/bins/3itdt'
+            url:'https://api.myjson.com/bins/24srv'
         }).then(function successCallback(response) {
             $scope.products = response.data;
             if ($routeParams.id) {
