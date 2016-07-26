@@ -16,6 +16,7 @@
         $scope.selectedProduct = {};
 
         $scope.itemsBought=0;
+        $scope.total=0;
 
 
         $scope.productsBought = [];
@@ -54,6 +55,12 @@
 
         };
 
+        $scope.updateInfo=function(){
+            localStorage.setItem("productsBought", JSON.stringify($scope.productsBought));
+            localStorage.setItem("total", JSON.stringify($scope.total));
+            localStorage.setItem("itemsBought", JSON.stringify($scope.itemsBought));
+        };
+
         $scope.addProduct = function (product) {
             $scope.itemInCart = false;
 
@@ -61,8 +68,6 @@
                 $scope.productsBought = [];
 
             }
-
-            $scope.total = 0;
 
             for (var i = 0; i < $scope.productsBought.length; i++) {
 
@@ -81,15 +86,11 @@
 
             }
             $scope.itemsBought++;
-            console.log( $scope.itemsBought);
             for (var j = 0; j < $scope.productsBought.length; j++) {
                 $scope.total += $scope.productsBought[j].quantity * $scope.productsBought[j].price;
 
             }
-            localStorage.setItem("productsBought", JSON.stringify($scope.productsBought));
-            localStorage.setItem("total", JSON.stringify($scope.total));
-            localStorage.setItem("itemsBought", JSON.stringify($scope.itemsBought));
-            console.log("after the JSON"+$scope.itemsBought);
+           $scope.updateInfo();
 
 
         };
@@ -102,15 +103,11 @@
             }
             else {
                 $scope.productsBought.splice(index, 1);
-                console.log("in" + index);
-                console.log("in again" + $scope.productsBought);
+
             }
             $scope.itemsBought--;
-            console.log($scope.itemsBought);
-            localStorage.setItem("productsBought", JSON.stringify($scope.productsBought));
-            localStorage.setItem("total", JSON.stringify($scope.total));
-            localStorage.setItem("itemsBought", JSON.stringify($scope.itemsBought));
-            console.log($scope.itemsBought);
+            $scope.updateInfo();
+
         };
 
 
