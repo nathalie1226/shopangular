@@ -85,10 +85,11 @@
                 });
 
             }
-            $scope.itemsBought++;
+             $scope.itemsBought++;
+            $scope.total = 0 ;
             for (var j = 0; j < $scope.productsBought.length; j++) {
-                $scope.total += $scope.productsBought[j].quantity * $scope.productsBought[j].price;
-
+                localStorage.removeItem('total');
+                $scope.total +=($scope.productsBought[j].quantity) * ($scope.productsBought[j].price);
             }
            $scope.updateInfo();
 
